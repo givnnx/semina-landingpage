@@ -12,8 +12,8 @@ export default function StoriesSection() {
         />
         <div className="flex flex-col">
           <div>
-            <div className="text-[20px] font-semibold mb-1">
-              <span className="bg-clip-text text-transparent bg-[linear-gradient(113.4deg,#F32FB8_0%,#FDD7BE_100%)]">
+            <div className="mb-2">
+              <span className="text-sm font-bold uppercase tracking-wider text-accent-magenta">
                 Story
               </span>
             </div>
@@ -22,7 +22,7 @@ export default function StoriesSection() {
               For The Better World.
             </div>
           </div>
-          <p className="text-base font-normal text-gray-text leading-[30px] my-[30px]">
+          <p className="text-base font-normal text-muted-light leading-[30px] my-6">
             Baca kisah bagaimana Shayna berhasil membangun{" "}
             <br className="hidden lg:block" />
             sebuah Startup yang membantu warga untuk{" "}

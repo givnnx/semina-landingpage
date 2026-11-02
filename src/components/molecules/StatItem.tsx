@@ -7,8 +7,8 @@ export default function StatItem({
 }) {
   return (
     <div className="flex flex-col items-center gap-1">
-      <div className="text-[32px] font-medium text-navy">{value}</div>
-      <p className="text-gray-text text-base">{label}</p>
+      <div className="text-3xl font-bold text-navy">{value}</div>
+      <p className="text-muted-light text-base font-medium">{label}</p>
     </div>
   );
 }

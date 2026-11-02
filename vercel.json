@@ -3,5 +3,11 @@
     "buildCommand"  : "next build",
     "installCommand": "bun install",
     "devCommand"    : "next dev",
-    "rewrites"      : [ {"source": "/(.*)", "destination": "/$1"} ]
+    "rewrites"      : [ {"source": "/(.*)", "destination": "/$1"} ],
+    "crons": [
+      {
+        "path": "/api/cron/keep-warm",
+        "schedule": "0 4 * * *"
+      }
+    ]
 }

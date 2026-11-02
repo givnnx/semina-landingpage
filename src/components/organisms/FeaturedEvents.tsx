@@ -11,9 +11,9 @@ export default function FeaturedEvents({
   subTitle: string;
 }) {
   return (
-    <section className="bg-gray-50 py-[100px]">
+    <section className="bg-surface-subtle py-20">
       <div className="container mx-auto px-4 lg:px-0">
-        <SectionTitle title={title} subTitle={subTitle} />
+        <SectionTitle title={title} subTitle={subTitle} id="grow-today" />
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6">
           {data.map((event, index) => (
             <div className="w-full" key={event._id || index}>

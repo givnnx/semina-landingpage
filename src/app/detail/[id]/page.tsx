@@ -60,7 +60,7 @@ export default async function DetailPage({
             <div className="mt-8 space-y-4">
               {(detailPage.keyPoint || []).map((key: string, i: number) => (
                 <div className="flex items-start gap-3" key={i}>
-                  <span className="text-green">✓</span>
+                  <span className="text-green-ink font-bold">✓</span>
                   <span className="text-navy">{key}</span>
                 </div>
               ))}
@@ -70,8 +70,8 @@ export default async function DetailPage({
               <h6 className="text-xl font-semibold text-navy mb-4">
                 Event Location
               </h6>
-              <div className="p-2 border border-gray-200 rounded-[18px] w-max">
-                <div className="relative overflow-hidden rounded-[18px] w-full md:w-[442px] h-[295px]">
+              <div className="p-2 border border-border-light rounded-2xl w-max">
+                <div className="relative overflow-hidden rounded-xl w-full md:w-[442px] h-[295px]">
                   <img
                     src="/images/maps.png"
                     alt=""
@@ -83,7 +83,7 @@ export default async function DetailPage({
           </div>
 
           <div className="w-full max-w-[360px]">
-            <div className="bg-white rounded-[24px] p-6 border border-gray-200">
+            <div className="bg-white rounded-3xl p-6 border border-border-light shadow-sm">
               <h6 className="text-[18px] font-medium text-navy mb-4">
                 Your Speaker
               </h6>
@@ -98,13 +98,13 @@ export default async function DetailPage({
                   <div className="font-medium text-base text-navy">
                     {detailPage.talent?.name}
                   </div>
-                  <span className="text-sm text-gray-text">
+                  <span className="text-sm text-muted-light">
                     {detailPage.talent?.role}
                   </span>
                 </div>
               </div>
 
-              <hr className="my-[30px] border-gray-200" />
+              <hr className="my-6 border-border-light" />
 
               <h6 className="text-[18px] font-medium text-navy mb-4">
                 Get Ticket
@@ -113,7 +113,7 @@ export default async function DetailPage({
                 <div key={ticket._id}>
                   <div className="text-[42px] font-bold text-navy my-3">
                     {ticket.price === 0 ? "free" : `$${ticket.price}`}
-                    <span className="text-base font-normal text-gray-text ml-1">
+                    <span className="text-base font-normal text-muted-light ml-1">
                       /person
                     </span>
                   </div>
@@ -128,10 +128,11 @@ export default async function DetailPage({
                   </div>
 
                   {detailPage.stock !== 0 && (
-                    <Link href={`/checkout/${id}?ticketId=${ticket._id}`}>
-                      <Button variant="green" className="w-full mt-4">
-                        Join Now
-                      </Button>
+                    <Link
+                      href={`/checkout/${id}?ticketId=${ticket._id}`}
+                      className="w-full mt-4 inline-flex items-center justify-center py-3 px-6 rounded-full text-base font-semibold text-center no-underline transition-all duration-200 bg-green text-navy hover:brightness-105 shadow-[0px_4px_15px_rgba(1,251,52,0.35)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-ink cursor-pointer"
+                    >
+                      Join Now
                     </Link>
                   )}
                 </div>

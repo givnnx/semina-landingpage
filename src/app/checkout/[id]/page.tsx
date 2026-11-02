@@ -3,15 +3,20 @@ import Navbar from "@/components/organisms/Navbar";
 import FormCheckout from "@/components/organisms/FormCheckout";
 import { getDetailEvent } from "@/utils/eventDetail";
 import { formatDate } from "@/utils/formatDate";
+import { getData } from "@/utils/fetchData";
 
 export default async function CheckoutPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams?: Promise<{ ticketId?: string }>;
 }) {
   const { id } = await params;
+  const sp = searchParams ? await searchParams : {};
   const detailPage = await getDetailEvent(id);
-
+  const paymentsRes = await getData("api/v1/participants/payments");
+  const payments = Array.isArray(paymentsRes?.data) ? paymentsRes.data : [];
   if (!detailPage) {
     return <div>Event not found.</div>;
   }
@@ -51,11 +56,16 @@ export default async function CheckoutPage({
               </div>
             </div>
             <div className="text-[42px] font-bold text-white ml-auto lg:ml-10 border-b-[5px] border-double border-white">
-              ${detailPage.tickets[0].price}
+              ${detailPage.tickets?.[0]?.price ?? 0}
             </div>
           </div>
 
-          <FormCheckout tickets={detailPage.tickets} />
+          <FormCheckout
+            eventId={id}
+            tickets={detailPage.tickets || []}
+            payments={payments}
+            selectedTicketId={sp.ticketId}
+          />
         </div>
       </section>
       <Footer />

@@ -11,7 +11,7 @@ export default async function Home() {
   let data: EventData[] = [];
 
   try {
-    const res = await getData("api/v1/events");
+    const res = await getData("api/v1/participants/events");
     if (res && res.data) {
       data = res.data;
     }

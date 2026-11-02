@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { formatDate } from "../../utils/formatDate";
 import Badge from "../atoms/Badge";
-
+import { API_BASE_URL } from "../../utils/fetchData";
 export interface Ticket {
   _id: string;
   type?: string;
@@ -38,29 +38,36 @@ export interface EventData {
 }
 
 export default function EventCard({ data }: { data: EventData }) {
+  const price = data.tickets?.[0]?.price ?? 0;
+  const imageUrl = data.image?.name
+    ? `${API_BASE_URL}/${data.image.name}`
+    : "https://placehold.co/400x200";
+
   return (
-    <div className="bg-white rounded-[20px] overflow-hidden relative h-full group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div className="bg-white rounded-2xl overflow-hidden relative h-full group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-border-light">
       <Badge variant="price" className="absolute z-10 right-4 top-4">
-        {data.tickets[0].price === 0 ? "free" : `$${data.tickets[0].price}`}
+        {price === 0 ? "free" : `$${price}`}
       </Badge>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`${process.env.NEXT_PUBLIC_API || ""}/${data.image.name}`}
-        alt="semina"
+        src={imageUrl}
+        alt={data.title}
         className="w-full h-[200px] object-cover"
       />
       <div className="p-5">
-        <div className="font-medium text-[18px] text-navy mb-2">
+        <div className="font-semibold text-lg text-navy mb-2 line-clamp-1">
           {data.title}
         </div>
-        <div className="font-normal text-sm text-gray-text mb-[30px]">
-          {data.category.name}
+        <div className="font-normal text-sm text-muted-light mb-6">
+          {data.category?.name || "General"}
         </div>
         <div className="font-medium text-sm text-navy">
           {data.venueName}, {formatDate(data.date)}
         </div>
         <Link
           href={`/detail/${data._id}`}
-          className="absolute inset-0 z-20 cursor-pointer"
+          aria-label={`View details for ${data.title}`}
+          className="absolute inset-0 z-20 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-ink"
         ></Link>
       </div>
     </div>

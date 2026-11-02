@@ -13,12 +13,12 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const baseClasses =
-    "py-[13px] px-[35px] rounded-[45px] text-base border-0 text-center no-underline transition-all duration-300 outline-none cursor-pointer inline-block";
+    "py-[13px] px-[35px] rounded-full text-base font-semibold border-0 text-center no-underline transition-all duration-200 cursor-pointer inline-flex items-center justify-center enabled:active:scale-[0.96] transition-transform disabled:opacity-50 disabled:cursor-not-allowed";
 
   const variants = {
-    navy: "bg-navy font-medium text-white hover:text-white focus:outline-[2.5px] focus:outline-gray-400/75",
+    navy: "bg-navy text-white hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green",
     green:
-      "text-navy font-semibold bg-green shadow-[0px_4px_15px_rgba(1,251,52,0.35)] hover:text-navy",
+      "text-navy bg-green hover:brightness-105 shadow-[0px_4px_15px_rgba(1,251,52,0.35)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-ink",
   };
 
   return (
