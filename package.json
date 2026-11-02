@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "vercel:env": "bun scripts/vercel-env.ts"
+    "vercel:env": "bun scripts/vercel-env.ts",
+    "push:env": "node scripts/push-env.js"
   },
   "dependencies": {
     "clsx": "^2.1.1",
