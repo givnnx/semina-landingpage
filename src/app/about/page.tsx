@@ -11,13 +11,13 @@ export default function About() {
       </section>
 
       <section className="bg-surface-subtle py-16">
-        <div className="container mx-auto px-4 lg:px-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-sm font-bold uppercase tracking-wider text-accent-magenta">
+            <span className="text-sm font-bold uppercase tracking-wider text-gradient-pink-peach inline-block">
               Our Mission
             </span>
             <h1 className="text-3xl lg:text-4xl font-bold text-navy mt-2">
-              Empowering Tech Talent Across Southeast Asia
+              Advancing Tech Talent Across Southeast Asia
             </h1>
             <p className="text-muted-light mt-4 text-base leading-relaxed">
               Semina connects aspiring developers, designers, and product leaders with industry practitioners through high-impact workshops, conferences, and masterclasses.

@@ -3,104 +3,105 @@ import Logo from "../atoms/Logo";
 
 export default function Footer() {
   return (
-    <footer className="footer bg-navy py-[70px]">
-      <div className="container mx-auto px-4 lg:px-0">
-        <Logo />
-        <div className="mt-8 flex flex-wrap gap-[150px] gap-y-12 items-baseline text-white">
-          <div className="w-full md:w-auto">
-            <p className="text-base font-normal text-gray-text leading-[30px]">
-              Semina adalah tempat di mana <br className="hidden md:block" />{" "}
-              anda dapat mencari event sesuai <br className="hidden md:block" />{" "}
-              dengan minat & terdekat.
+    <footer className="footer bg-navy py-14 lg:py-20 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 text-white">
+          <div className="sm:col-span-2 lg:col-span-2">
+            <Logo />
+            <p className="text-base font-normal text-gray-text leading-relaxed mt-6 max-w-sm">
+              Semina adalah platform di mana Anda dapat menemukan seminar dan
+              workshop terbaik sesuai dengan minat dan tujuan karier Anda.
             </p>
           </div>
 
-          <div className="flex flex-col gap-2">
-            <div className="font-medium text-white mb-3">Features</div>
-            <a
-              href="#"
-              className="text-gray-text hover:text-white hover:underline transition-all duration-300"
+          <div className="flex flex-col gap-2.5">
+            <div className="font-semibold text-white mb-2 text-base">Explore</div>
+            <Link
+              href="/browse"
+              className="text-gray-text hover:text-white transition-colors duration-200 text-sm"
             >
-              Virtual
-            </a>
-            <a
-              href="#"
-              className="text-gray-text hover:text-white hover:underline transition-all duration-300"
+              All Events
+            </Link>
+            <Link
+              href="/stories"
+              className="text-gray-text hover:text-white transition-colors duration-200 text-sm"
             >
-              Pricing
-            </a>
-            <a
-              href="#"
-              className="text-gray-text hover:text-white hover:underline transition-all duration-300"
+              Success Stories
+            </Link>
+            <Link
+              href="/about"
+              className="text-gray-text hover:text-white transition-colors duration-200 text-sm"
             >
-              Merchant
-            </a>
-            <a
-              href="#"
-              className="text-gray-text hover:text-white hover:underline transition-all duration-300"
+              About Semina
+            </Link>
+            <Link
+              href="/orders"
+              className="text-gray-text hover:text-white transition-colors duration-200 text-sm"
             >
-              Tickets
-            </a>
+              My Tickets
+            </Link>
           </div>
 
-          <div className="flex flex-col gap-2">
-            <div className="font-medium text-white mb-3">Company</div>
-            <a
-              href="#"
-              className="text-gray-text hover:text-white hover:underline transition-all duration-300"
+          <div className="flex flex-col gap-2.5">
+            <div className="font-semibold text-white mb-2 text-base">Company</div>
+            <Link
+              href="/about"
+              className="text-gray-text hover:text-white transition-colors duration-200 text-sm"
             >
-              Jobs
-            </a>
-            <a
-              href="#"
-              className="text-gray-text hover:text-white hover:underline transition-all duration-300"
-            >
-              API
-            </a>
-            <a
-              href="#"
-              className="text-gray-text hover:text-white hover:underline transition-all duration-300"
-            >
-              Press
-            </a>
-            <a
-              href="#"
-              className="text-gray-text hover:text-white hover:underline transition-all duration-300"
-            >
-              Sitemap
-            </a>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <div className="font-medium text-white mb-3">Learn</div>
-            <a
-              href="#"
-              className="text-gray-text hover:text-white hover:underline transition-all duration-300"
-            >
-              Guidebook
-            </a>
-            <a
-              href="#"
-              className="text-gray-text hover:text-white hover:underline transition-all duration-300"
-            >
-              Inspiration
-            </a>
-            <a
-              href="#"
-              className="text-gray-text hover:text-white hover:underline transition-all duration-300"
+              Our Mission
+            </Link>
+            <Link
+              href="/stories"
+              className="text-gray-text hover:text-white transition-colors duration-200 text-sm"
             >
               Community
-            </a>
-            <a
-              href="#"
-              className="text-gray-text hover:text-white hover:underline transition-all duration-300"
+            </Link>
+            <Link
+              href="/browse"
+              className="text-gray-text hover:text-white transition-colors duration-200 text-sm"
             >
-              Tools
-            </a>
+              Partnerships
+            </Link>
+            <Link
+              href="/about"
+              className="text-gray-text hover:text-white transition-colors duration-200 text-sm"
+            >
+              Speakers
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-2.5">
+            <div className="font-semibold text-white mb-2 text-base">Account</div>
+            <Link
+              href="/signin"
+              className="text-gray-text hover:text-white transition-colors duration-200 text-sm"
+            >
+              Sign In
+            </Link>
+            <Link
+              href="/signup"
+              className="text-gray-text hover:text-white transition-colors duration-200 text-sm"
+            >
+              Create Account
+            </Link>
+            <Link
+              href="/orders"
+              className="text-gray-text hover:text-white transition-colors duration-200 text-sm"
+            >
+              Order History
+            </Link>
+            <Link
+              href="/browse"
+              className="text-gray-text hover:text-white transition-colors duration-200 text-sm"
+            >
+              Ticket Pricing
+            </Link>
           </div>
         </div>
-        <div className="flex justify-center text-gray-text mt-[70px]">
-          All Rights Reserved. Giovanni 2023.
+
+        <div className="flex flex-col sm:flex-row justify-between items-center text-gray-text text-sm border-t border-white/10 mt-12 pt-8 gap-4">
+          <p>© {new Date().getFullYear()} Semina. All rights reserved.</p>
+          <p className="text-gray-text text-xs">Practical workshops and conferences for tech practitioners.</p>
         </div>
       </div>
     </footer>

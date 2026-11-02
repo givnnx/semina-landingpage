@@ -12,8 +12,8 @@ export default function Stories() {
       </section>
 
       <section className="bg-surface-subtle py-12">
-        <div className="container mx-auto px-4 lg:px-0 text-center">
-          <span className="text-sm font-bold uppercase tracking-wider text-accent-magenta">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="text-sm font-bold uppercase tracking-wider text-gradient-pink-peach inline-block">
             Community Impact
           </span>
           <h1 className="text-3xl lg:text-4xl font-bold text-navy mt-1">

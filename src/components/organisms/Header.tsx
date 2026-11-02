@@ -1,11 +1,12 @@
 import Navbar from "./Navbar";
 import Hero from "./Hero";
+import { EventData } from "@/components/molecules/EventCard";
 
-export default function Header() {
+export default function Header({ events = [] }: { events?: EventData[] }) {
   return (
-    <header className="header bg-navy min-h-[880px]">
+    <header className="header bg-navy">
       <Navbar />
-      <Hero />
+      <Hero events={events} />
     </header>
   );
 }

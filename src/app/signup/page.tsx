@@ -9,8 +9,8 @@ export default function Signup() {
         <Navbar />
       </section>
 
-      <section className="login header bg-navy min-h-screen py-[50px] flex items-center">
-        <div className="container mx-auto px-4 lg:px-0">
+      <section className="login header bg-navy py-12 lg:py-20 flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="md:pr-10">
               <div className="text-[45px] font-semibold text-white leading-tight mb-6">
@@ -30,7 +30,7 @@ export default function Signup() {
         </div>
       </section>
 
-      <BrandSection className="bg-navy pt-0" />
+      <BrandSection className="bg-navy pt-4 pb-16" variant="dark" />
     </>
   );
 }

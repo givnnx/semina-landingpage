@@ -38,11 +38,11 @@ export default function Navbar() {
   const isSigninPage = pathname === "/signin";
 
   return (
-    <nav className="container mx-auto py-5 navbar navbar-expand-lg navbar-dark px-4 lg:px-0">
+    <nav className="max-w-7xl mx-auto py-4 sm:py-5 px-4 sm:px-6 lg:px-8">
       <div className="flex flex-wrap items-center justify-between w-full">
         <Logo />
         <button
-          className="lg:hidden block text-gray-text hover:text-white focus-visible:outline-2 focus-visible:outline-green p-2 rounded-lg cursor-pointer"
+          className="lg:hidden min-h-11 min-w-11 inline-flex items-center justify-center text-gray-text hover:text-white focus-visible:outline-2 focus-visible:outline-green p-2 rounded-lg cursor-pointer"
           type="button"
           aria-label="Toggle navigation menu"
           aria-expanded={isMenuOpen}
@@ -63,6 +63,7 @@ export default function Navbar() {
             <NavLink href={"/browse"}>Browse</NavLink>
             <NavLink href={"/stories"}>Stories</NavLink>
             <NavLink href={"/about"}>About</NavLink>
+            {token && <NavLink href={"/orders"}>My Tickets</NavLink>}
           </div>
 
           {!isSigninPage && (

@@ -76,3 +76,20 @@ button:not(:disabled),
     scroll-behavior: auto !important;
   }
 }
+
+/* Brand text gradients */
+.text-gradient-blue-teal {
+  background: linear-gradient(113.4deg, #00A0F5 0%, #00F7E6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-gradient-pink-peach {
+  background: linear-gradient(113.4deg, #F32FB8 0%, #FDD7BE 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}

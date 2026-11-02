@@ -9,7 +9,7 @@ export default function SectionTitle({
 }) {
   return (
     <div id={id} className="mb-6">
-      <span className="text-sm font-bold uppercase tracking-wider text-accent-magenta">
+      <span className="text-sm font-bold uppercase tracking-wider text-gradient-pink-peach inline-block">
         {subTitle}
       </span>
       <h2 className="text-3xl font-bold text-navy mt-1">{title}</h2>

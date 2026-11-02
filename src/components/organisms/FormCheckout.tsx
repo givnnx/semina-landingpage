@@ -247,7 +247,9 @@ export default function FormCheckout({
           {loading ? "Processing..." : `Pay $${selectedTicket.price} Now`}
         </Button>
         <div className="flex items-center gap-2 text-muted-light text-xs">
-          <span>🔒</span>
+          <span className="w-6 h-6 rounded-full bg-navy inline-flex items-center justify-center shrink-0">
+            <img src="/icons/ic-secure.svg" alt="" className="w-3.5 h-3.5" />
+          </span>
           <span>Your payment is secure and encrypted end-to-end</span>
         </div>
       </div>
